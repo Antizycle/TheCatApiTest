@@ -19,4 +19,14 @@ export type BreedData = {
 temperament: string;
 };
 
+export type CatImagesList = [
+  {
+    breeds: BreedData;
+    url: string;
+    id: string;
+    width: number;
+    height: number;
+  }
+];
+
 export type BreedList = [ BreedData ];

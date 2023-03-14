@@ -1,11 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'; 
 import type { RootState } from './store';
+import { CatImagesList } from '../components/types/catsData';
 
 // Define a type for the catSlice state
 export type catState = {
   breed: string;
   images: number;
-  error: boolean;
+  imagesLinks: CatImagesList | null;
+  loadingState: boolean;
+  error: string;
 };
 
 // export enum CatActionType {
@@ -22,11 +25,33 @@ type ImagesChanged = {
   payload: number;
 }
 
+type LinksChanged = {
+  type: string;
+  payload: CatImagesList;
+};
+
+type LoadingStateChanged = {
+  type: string;
+  payload: boolean;
+}
+
+type ErrorOccured = {
+  type: string;
+  payload: string;
+}
+
+type ResetOccured = {
+  type: string;
+  payload?: boolean;
+}
+
 // Define the initial state using that type
 const initialState: catState = {
   breed: 'all',
   images: 1,
-  error: false
+  imagesLinks: null,
+  loadingState: false,
+  error: '',
 };
 
 export const catSlice = createSlice({
@@ -39,16 +64,28 @@ export const catSlice = createSlice({
     imagesChanged: (state, action: ImagesChanged) => {
       state.images = action.payload;
     },
-    errorOccured: (state, action) => {
+    linksChanged: (state, action: LinksChanged) => {
+      state.imagesLinks = action.payload;
+    },
+    loadingStateChanged: (state, action: LoadingStateChanged) => {
+      state.loadingState = action.payload;
+    },
+    errorOccured: (state, action: ErrorOccured) => {
       state.error = action.payload;
     },
-    resetOccured: (state) => {
-      state = initialState;
+    resetOccured: (state, action: ResetOccured) => {
+      // figure out state object in reducers. Something to do how Immer does it magic
+
+      state.breed = 'all';
+      state.images = 1;
+      state.error = '';
+      state.imagesLinks = null;
+      state.loadingState = false;
     },
   }
 });
 
-export const { breedChanged, imagesChanged, errorOccured } = catSlice.actions;
+export const { breedChanged, imagesChanged, linksChanged, loadingStateChanged, errorOccured, resetOccured } = catSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectCount = (state: RootState) => state.cats;

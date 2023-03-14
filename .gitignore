@@ -27,3 +27,4 @@ yarn-error.log*
 # other
 /__old sandboxes
 .vscode
+stats.json

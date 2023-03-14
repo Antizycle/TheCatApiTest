@@ -1,12 +1,18 @@
 Test Application to work with The Cat API (https://thecatapi.com/)
 
 Using: Node.Js; Webpack 5 (with SASS, min-css-extract-plugin, html-webpack-plugin,
-       devserver); SASS, React, Typescript, React Redux Toolkit, Axios
+       devserver), SASS, React, Typescript, React Redux Toolkit, Axios
 
 Progress Log:
-1. Basic configuration for development environment is done (yet going to find more 
-   things to configure...).
-   Boilerplate layout of the page and header is done.
+3. A bit of refactoring.
+   CatForm is a seperate component. That lead to moving imageList and isLoading
+   from local state into castSlice (and creating corresponding reducer actions
+   and types). And form related eventHandlers are now in the CatForm Component.
+   Axios requests are mode via "theCatAPI" module with generalized async function
+   which takes 'method' and 'endpoint' and return an object with either a data or
+   an error message (need to work on Types here).
+   Next step: style everything properly.
+
 2. Setup store and "catSlice" are done. Api calls through Axios for breed data and
    images. Rendering data.
    In redux store we have reducer for "catSlice" which contains state for cats
@@ -29,6 +35,10 @@ Progress Log:
 
    Nothing is properly structured and styled. Main focus on getting everything
    to work. Need to work on typisation, modulation and styling.
+
+1. Basic configuration for development environment is done (yet going to find more 
+   things to configure...).
+   Boilerplate layout of the page and header is done.
 
 Disclaimer. Main goal of this project is to learn how to use Redux and Typescript
 in React applications. I am aware that current usage of Redux is quite an overkill
