@@ -1,6 +1,10 @@
 @import './imports/resets';
 @import './imports/vars';
 
+img {
+  max-width: 100%;
+}
+
 .content {
   width: 100%;
   min-height: 100vh;
