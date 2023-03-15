@@ -45,7 +45,7 @@
   @media (min-width: 450px) {
       display: grid;
       grid-template-columns: auto 2rem 12rem;
-      grid-template-rows: 7rem auto auto;
+      grid-template-rows: min-content auto auto;
       grid-template-areas: 
       'name .    chars'
       'desc .    chars'

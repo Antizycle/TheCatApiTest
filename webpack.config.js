@@ -12,7 +12,7 @@ module.exports = {
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
-  devtool: "inline-source-map",
+  // devtool: "inline-source-map",
   devServer: {
     hot: false,
     liveReload: false,
