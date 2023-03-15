@@ -10,6 +10,9 @@ export const App: React.FC = () => {
       <div className='content'>
         <Header />
         <CatComp />
+        <footer className='footer'>
+          2023 / by <a href='http://antizycle.online' target='_blank' rel='noreferrer'>Antizycle</a>
+        </footer>
       </div>
     </Provider>
   );

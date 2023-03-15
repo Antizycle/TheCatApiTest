@@ -16,7 +16,7 @@ export type BreedData = {
   short_legs: number;
   social_needs: number;
   stranger_friendly: number;
-temperament: string;
+  temperament: string;
 };
 
 export type CatImagesList = [

@@ -1,0 +1,70 @@
+.cat-data {
+  max-width: 90rem;
+  border: $acnt-clr 1px solid;
+  border-radius: .5rem;
+  padding: 1rem;
+  text-align: left;
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: $acnt-clr 1px solid;
+      border-radius: .5rem;
+    }
+  }
+
+  &__characteristic-box {
+    width: 100%;
+    max-width: 13rem;
+    height: 1.50rem;
+    margin-top: 0.1rem;
+    display: block;
+    padding: 0.125rem;
+    background-color: $dark-clr;
+    border: 1px solid $acnt-clr;
+    border-radius: 0.5rem;
+    line-height: 1;
+  }
+
+  &__characteristic-level {
+    display: inline-block;
+    padding: 0.125rem;
+    text-align: center;
+    background-color: $acnt-clr;
+    border-radius: 0.4rem;
+    font-size: .8rem;
+    line-height: 1;
+  }
+
+  @media (min-width: 450px) {
+      display: grid;
+      grid-template-columns: auto 2rem 12rem;
+      grid-template-rows: 7rem auto auto;
+      grid-template-areas: 
+      'name .    chars'
+      'desc .    chars'
+      'imgs imgs imgs';
+
+      &__name { 
+        grid-area: name;
+      }
+      &__chars { 
+        grid-area: chars;
+        text-align: right;
+        p {
+          margin: 0.2rem;
+        }
+      }
+      &__desc { grid-area: desc; }   
+      &__images { 
+        grid-area: imgs;
+        margin-top: 1rem;
+      } 
+  }
+}

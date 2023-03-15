@@ -47,7 +47,7 @@ type ResetOccured = {
 
 // Define the initial state using that type
 const initialState: catState = {
-  breed: 'all',
+  breed: 'none',
   images: 1,
   imagesLinks: null,
   loadingState: false,
@@ -76,7 +76,7 @@ export const catSlice = createSlice({
     resetOccured: (state, action: ResetOccured) => {
       // figure out state object in reducers. Something to do how Immer does it magic
 
-      state.breed = 'all';
+      state.breed = 'none';
       state.images = 1;
       state.error = '';
       state.imagesLinks = null;

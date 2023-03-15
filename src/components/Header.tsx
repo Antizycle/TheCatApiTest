@@ -13,6 +13,9 @@ export const Header = () => {
 
   return (
     <header className='header'>
+      <div className='acknowledgement'>
+        API and Data Provided by <a href="https://thecatapi.com" target='_blank' rel='noreferrer' className='--clr-accent'>The Cat Api</a>
+      </div>
       <nav>
         <img src={thecat} alt="The Cat Api Test Application" className='header__logo'/>
         <h2>The Cat Api Test Application</h2>

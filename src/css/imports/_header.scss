@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  padding: 0 2rem;
+  margin: auto;
+  color: $dark-clr;
+  background-color: $acnt-clr;
+  border-bottom: 2px solid black;
+
+  .acknowledgement {
+    @include fixed();
+    left: 50%;
+    border-radius: 0 0 .3rem .3rem;
+  }
+
+  nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  }
+
+  &__logo {
+    width: 100px;
+    height: auto;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @media (min-width: 491px) {
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+  }
+
+}

@@ -1,0 +1,79 @@
+.cat-form {
+  border: $acnt-clr 1px solid;
+  border-radius: .5rem;
+  padding: 1rem;
+  position: relative;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: $acnt-clr;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  &__label {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    align-self: flex-start;
+  }
+
+  &__error {
+    font-size: .8rem;
+    color: $err-clr;
+  }
+
+  &__select {
+    border: 1px solid $acnt-clr;
+    background-color: $light-clr;
+    border-radius: .5rem;
+    width: 100%;
+    padding: 0.25em;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+
+    &--error {
+      box-shadow: 0px 0px 20px 5px $err-clr;
+    }
+  }
+
+  &__button {
+    padding: 0.5em 2em;
+    font-weight: 400;
+    border-radius: .5em;
+
+    &--submit {
+      width: 100%;
+      border: 1px solid $acnt-clr;
+      background-color: $acnt-clr;
+
+      &:hover {
+        background-color: adjust-color($acnt-clr, $lightness: 20%);
+      }
+    }
+
+    &--reset {
+      width: 70%;
+      border: 1px solid $dark-clr;
+      background-color: $light-clr;
+      opacity: .6;
+      margin-top: 1rem;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__select:active,
+  &__select:focus,
+  &__select:focus-visible,
+  &__button:active,
+  &__button:focus-visible {
+    outline: transparent;
+    box-shadow: 0px 0px 5px 1px $acnt-clr;
+  }
+}

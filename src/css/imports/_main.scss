@@ -1,0 +1,41 @@
+@import './cat-form';
+@import './cat-data';
+
+.main {
+  padding: 2rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem
+}
+
+.err-msg {
+  width: fit-content;
+  border: $err-clr 1px solid;
+  border-radius: .5rem;
+  padding: 1rem 2rem;
+}
+
+.loading-msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  padding-right: .5rem;
+  border-radius: .5rem;
+  text-align: right;
+  background-color: rgba(20, 10, 15, 0.6);
+  
+  span {
+    font-size: .3rem;
+  }
+  img {
+    width: 20px;
+    height: auto;
+  }
+}

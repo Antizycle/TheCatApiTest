@@ -14,7 +14,7 @@ export const GetData = async (method: 'post' | 'get', endpoint: string) => {
     headers: { 'content-type': 'application/json', "x-api-key": "live_CbOzwSeSxfA4oToyHbPPbHrTdupCpUEN9ch05Vs7v45mpuYxP3U4Z3zn2iN8GrTs" },
   })
   .then((response) => {
-    if (response.statusText === 'OK') {
+    if (response.status === 200) {
       data = response.data;
       return data;
     } else {

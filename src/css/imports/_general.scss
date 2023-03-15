@@ -1,0 +1,27 @@
+.content {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $dark-clr;
+  color: $light-clr;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.--clr-accent {
+  color: $acnt-clr !important;
+}

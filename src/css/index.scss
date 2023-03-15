@@ -1,129 +1,16 @@
 @import './imports/resets';
 @import './imports/vars';
+@import './imports/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import './imports/general';
+@import './imports/header';
+@import './imports/main';
 
-img {
-  max-width: 100%;
-}
 
-.content {
-  width: 100%;
-  min-height: 100vh;
-  background-color: $dark-clr;
-  color: $light-clr;
-  font-family: 'Roboto', Helvetica, sans-serif;
-  font-size: 1rem;
-  line-height: 1.2;
-}
 
-.header {
-  width: 100%;
-  padding: 0 2rem;
-  margin: auto;
-  color: $dark-clr;
-  background-color: $acnt-clr;
-  border-bottom: 2px solid black;
 
-  nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  }
-
-  &__logo {
-    width: 100px;
-    height: auto;
-  }
-
-  ul {
-    list-style: none;
-    margin-left: auto;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-
-    .a-active,
-    a:hover {
-      color: $acnt-clr;
-      background-color: $dark-clr;
-      padding: 0.5rem;
-      border-radius: .5rem;
-    }
-  }
-}
-
-.main {
-  padding: 2rem;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 2rem
-}
-
-@mixin content-container() {
-  border: 1px solid $acnt-clr;
-  border-radius: .5rem;
-  padding: 1rem;
-  text-align: left;
-  width: 100%;
-}
-
-h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.blog-preview {
-  @include content-container();
-
-  &:hover {
-    background-color: adjust-color($dark-clr, $lightness: 20%);
-  }
-}
-
-.blog-detail {
-  @include content-container();
-}
-
-.main__container {
-  @include content-container();
-}
-
-.create-form {
-  * {
-    display: block;
-    margin: 0.5em 0;
-  }
-  input, textarea {
-    border: 1px solid $acnt-clr;
-    background-color: $light-clr;
-    width: 100%;
-    max-width: 25rem;
-    padding: 0.25em;
-    font-size: 1rem;
-  }
-  textarea {
-    min-height: 10rem;
-  }
-  button {
-    border: 1px solid $acnt-clr;
-    background-color: $light-clr;
-    padding: 0.5em 2em;
-    font-weight: 600;
-    border-radius: 1em;
-  }
-
-  input:focus,
-  textarea:focus,
-  button:focus {
-    outline: transparent;
-    box-shadow: 0 0 5px 1px $acnt-clr;
-  }
+.footer {
+  @include fixed();
+  bottom: 0;
+  border-radius: .3rem .3rem 0 0;
 }
